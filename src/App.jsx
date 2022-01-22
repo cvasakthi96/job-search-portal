@@ -4,7 +4,7 @@ import NotFound from "./pages/not-found/NotFound";
 import AuthenticatedRoutes from "./routes/Authenticated.route";
 import "./App.scss";
 import Dashboard from "./pages/dashboard/Dashboard";
-import Header from "./components/header/Header";
+import Header from "./shared/header/Header";
 const PAGE_URLS = {
   homePage: {
     path: "/",
