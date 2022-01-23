@@ -43,7 +43,8 @@ export default function Login() {
       dispatch(commonActions.showLoaderOverlay());
       userLoginService(credential)
         .then((res) => {
-          const { data, code, success } = res;
+          const { data, code, success } = res.data;
+          //   console.log(res.data);
           localStorage.setItem("portal-token", JSON.stringify(data?.token));
           dispatch(userActions.updateUser(data));
           dispatch(commonActions.hideLoaderOverlay());

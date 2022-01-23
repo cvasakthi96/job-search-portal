@@ -1,12 +1,14 @@
+import { useSelector } from "react-redux";
 import { Route, Redirect } from "react-router-dom";
 export default function AuthenticatedRoutes(props) {
   const { component: AuthenticatedComponent, ...rest } = props;
-  const isAuthenticated = true;
+  const token = localStorage.getItem("portal-token");
+
   return (
     <Route
       {...rest}
       render={(props) =>
-        isAuthenticated ? (
+        token ? (
           <AuthenticatedComponent {...props} />
         ) : (
           <Redirect to={{ pathname: "/" }} />
