@@ -9,7 +9,9 @@ export default function Header() {
         </div>
 
         <div className="action-btn ">
-          <button className="btn btn-sm btn-secondary">Login/Signup</button>
+          <button className="btn btn-sm btn-secondary text-white">
+            Login/Signup
+          </button>
         </div>
       </div>
     </div>

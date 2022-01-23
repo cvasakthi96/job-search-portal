@@ -1,0 +1,19 @@
+.landing-page-section {
+  .content-wrapper {
+    height: 300px;
+  }
+  .welcome-text-wrapper {
+    font-size: larger;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .welcome-info {
+      font-size: 50px;
+    }
+  }
+  img {
+    width: 622px;
+    height: 395px;
+    border-radius: 22px;
+  }
+}

@@ -12,6 +12,7 @@ body {
   font-family: Helvetica, sans-serif;
   #root {
     height: 100%;
+    overflow: auto;
   }
   background: linear-gradient(
     to bottom,
@@ -20,4 +21,5 @@ body {
     #edf6ff 40%,
     #edf6ff 100%
   );
+  background-repeat: no-repeat;
 }
