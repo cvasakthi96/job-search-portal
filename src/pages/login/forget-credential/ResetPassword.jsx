@@ -75,7 +75,8 @@ export default function ResetPassword() {
           }
         })
         .catch((err) => {
-          const { success, code } = err.response.data;
+          const { success, code, message } = err.response.data;
+          alert(message);
           if (!success && code) {
             dispatch(commonActions.hideLoaderOverlay());
           }
@@ -100,7 +101,7 @@ export default function ResetPassword() {
           const { data, code, success } = res.data;
           dispatch(commonActions.hideLoaderOverlay());
           if (success) {
-            localStorage.setItem("portal-token", JSON.stringify(data.token));
+            localStorage.setItem("portal-token", data?.token);
             dispatch(userActions.updateUser(data));
             alert("password change successfully...");
             history.push(PAGE_URLS.DashBoard.path);

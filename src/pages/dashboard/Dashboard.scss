@@ -1,0 +1,49 @@
+.dashboard-container {
+  margin: 0 1rem;
+  .breadcrumb {
+    padding: 1rem;
+    background-color: transparent;
+    .breadcrumb-item {
+      color: white;
+      i {
+        color: white;
+      }
+    }
+  }
+  .main-content {
+    height: 90vh;
+    margin: 0 10rem;
+    .posted-text {
+      font-weight: bold;
+      color: white;
+      font-size: 22px;
+    }
+    .jobs-list-wrapper {
+      position: relative;
+      .no-jobs {
+        height: 50vh;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        top: 250px;
+        i {
+          font-size: 8rem;
+          color: #cbd2dd;
+          margin-top: 1rem;
+          margin-bottom: 0.5rem;
+        }
+        .no-jobs-text {
+          color: #303f60;
+          margin-top: 10px 0;
+          font-size: 20px;
+        }
+        button {
+          margin: 2rem 0;
+        }
+      }
+    }
+  }
+}

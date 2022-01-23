@@ -17,7 +17,7 @@ const requestHandler = (request) => {
     }
     const tokenId = localStorage.getItem("portal-token");
     if (tokenId) {
-      request.headers["Authorization"] = `Bearer ${tokenId}`;
+      request.headers["Authorization"] = `${tokenId}`;
     }
   }
   return request;

@@ -69,7 +69,7 @@ export default function Signup() {
       createAccountService(userData)
         .then((res) => {
           const { data, code, success } = res.data;
-          localStorage.setItem("portal-token", JSON.stringify(data?.token));
+          localStorage.setItem("portal-token", data?.token);
           dispatch(userActions.updateUser(data));
           dispatch(commonActions.hideLoaderOverlay());
           if (success) {

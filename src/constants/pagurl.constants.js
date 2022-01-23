@@ -24,4 +24,9 @@ export const PAGE_URLS = {
     title: "not-found",
     protected: false,
   },
+  jobPost: {
+    path: "/dashboard/job-post",
+    title: "Post a Job",
+    protected: false,
+  },
 };

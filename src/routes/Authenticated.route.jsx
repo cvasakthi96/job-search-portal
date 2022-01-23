@@ -1,4 +1,3 @@
-import { useSelector } from "react-redux";
 import { Route, Redirect } from "react-router-dom";
 export default function AuthenticatedRoutes(props) {
   const { component: AuthenticatedComponent, ...rest } = props;
@@ -8,7 +7,7 @@ export default function AuthenticatedRoutes(props) {
     <Route
       {...rest}
       render={(props) =>
-        true ? (
+        token ? (
           <AuthenticatedComponent {...props} />
         ) : (
           <Redirect to={{ pathname: "/" }} />

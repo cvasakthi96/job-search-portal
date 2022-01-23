@@ -4,5 +4,7 @@ const api = {
   verifyPasswordToken: "/auth/resetpassword/",
   changePassword: "/auth/resetpassword",
   register: "/auth/register",
+  createJobs: "/jobs/",
+  postedJobs: "/recruiters/jobs",
 };
 export default api;

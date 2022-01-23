@@ -1,0 +1,45 @@
+.portal-job-post-wrapper {
+  margin: 0 2rem;
+  height: 100%;
+  .job-post-text {
+    font-size: 22px;
+    font-weight: bold;
+    color: #303f60;
+  }
+  .portal-job-post {
+    margin-top: 160px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .card {
+      width: 557px;
+      height: 500px;
+      padding: 2rem;
+      box-shadow: 0px 30px 36px #557da526;
+      border-radius: 20px;
+      opacity: 1;
+      .form-group {
+        margin: 1rem 0;
+        label,
+        span {
+          font-size: 14px;
+          letter-spacing: 0px;
+          color: #303f60;
+          opacity: 1;
+          user-select: none;
+        }
+        .form-control::placeholder {
+          letter-spacing: 0px;
+          color: #303f60;
+          opacity: 0.4;
+        }
+
+        .btn-link {
+          font-size: 17px;
+          letter-spacing: 0px;
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
