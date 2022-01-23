@@ -45,3 +45,14 @@ export const changePasswordService = (data) => {
       return Promise.reject(error);
     });
 };
+export const createAccountService = (data) => {
+  const url = api.register;
+  return axiosInstance
+    .post(url, data)
+    .then((response) => {
+      return response;
+    })
+    .catch((error) => {
+      return Promise.reject(error);
+    });
+};

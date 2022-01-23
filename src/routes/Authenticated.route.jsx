@@ -8,7 +8,7 @@ export default function AuthenticatedRoutes(props) {
     <Route
       {...rest}
       render={(props) =>
-        token ? (
+        true ? (
           <AuthenticatedComponent {...props} />
         ) : (
           <Redirect to={{ pathname: "/" }} />

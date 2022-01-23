@@ -48,7 +48,7 @@ export default function Login() {
           localStorage.setItem("portal-token", JSON.stringify(data?.token));
           dispatch(userActions.updateUser(data));
           dispatch(commonActions.hideLoaderOverlay());
-          if (success && code === 200) {
+          if (success && code) {
             history.push(PAGE_URLS.DashBoard.path);
           }
         })
