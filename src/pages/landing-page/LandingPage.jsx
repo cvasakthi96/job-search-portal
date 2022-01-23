@@ -1,3 +1,4 @@
+import Header from "../../shared/header/Header";
 import Footer from "./footer/Footer";
 import GetStarted from "./getStarted/GetStarted";
 import "./LandingPage.scss";
@@ -22,26 +23,29 @@ const sectionData = {
 };
 export default function LandingPage() {
   return (
-    <div className="landing-page-section">
-      {/* Get started */}
-      <GetStarted />
-      {/* why us section */}
-      <Section>
-        <SectionItem
-          title={sectionData.section1.title}
-          description={sectionData.section1.description}
-        />
-        <SectionItem
-          title={sectionData.section2.title}
-          description={sectionData.section2.description}
-        />
-        <SectionItem
-          title={sectionData.section3.title}
-          description={sectionData.section3.description}
-        />
-      </Section>
-      {/* Footer */}
-      <Footer />
-    </div>
+    <>
+      <Header />
+      <div className="landing-page-section">
+        {/* Get started */}
+        <GetStarted />
+        {/* why us section */}
+        <Section>
+          <SectionItem
+            title={sectionData.section1.title}
+            description={sectionData.section1.description}
+          />
+          <SectionItem
+            title={sectionData.section2.title}
+            description={sectionData.section2.description}
+          />
+          <SectionItem
+            title={sectionData.section3.title}
+            description={sectionData.section3.description}
+          />
+        </Section>
+        {/* Footer */}
+        <Footer />
+      </div>
+    </>
   );
 }

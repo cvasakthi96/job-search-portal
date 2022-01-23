@@ -4,34 +4,11 @@ import NotFound from "./pages/not-found/NotFound";
 import AuthenticatedRoutes from "./routes/Authenticated.route";
 import "./App.scss";
 import Dashboard from "./pages/dashboard/Dashboard";
+import Login from "./pages/login/Login";
+import { PAGE_URLS } from "./constants/pagurl.constants";
+import Signup from "./pages/signup/Signup";
 import Header from "./shared/header/Header";
-const PAGE_URLS = {
-  homePage: {
-    path: "/",
-    title: "Home",
-    protected: false,
-  },
-  LoginPage: {
-    path: "/login",
-    title: "Login",
-    protected: false,
-  },
-  SignupPage: {
-    path: "/signup",
-    title: "Signup",
-    protected: false,
-  },
-  DashBoard: {
-    path: "/dashboard",
-    title: "Dashboard",
-    protected: true,
-  },
-  notFoundPage: {
-    path: "/not-found",
-    title: "not-found",
-    protected: false,
-  },
-};
+
 const AppRoutes = [
   {
     path: PAGE_URLS.homePage.path,
@@ -43,16 +20,14 @@ const AppRoutes = [
     path: PAGE_URLS.LoginPage.path,
     title: PAGE_URLS.LoginPage.title,
     protected: PAGE_URLS.LoginPage.protected,
+    component: Login,
   },
-  {
-    path: PAGE_URLS.LoginPage.path,
-    title: PAGE_URLS.LoginPage.title,
-    protected: PAGE_URLS.LoginPage.protected,
-  },
+
   {
     path: PAGE_URLS.SignupPage.path,
     title: PAGE_URLS.SignupPage.title,
     protected: PAGE_URLS.SignupPage.protected,
+    component: Signup,
   },
   {
     path: PAGE_URLS.DashBoard.path,
@@ -79,11 +54,12 @@ export default function App() {
   // console.log(AppAuthenticatedRoutes);
   return (
     <div className="main-container">
-      <Header />
       <BrowserRouter>
         <Switch>
           {AppAuthenticatedRoutes()}
           <Route exact path={PAGE_URLS.homePage.path} component={LandingPage} />
+          <Route exact path={PAGE_URLS.LoginPage.path} component={Login} />
+          <Route exact path={PAGE_URLS.SignupPage.path} component={Signup} />
           <Route component={NotFound} />
         </Switch>
       </BrowserRouter>
