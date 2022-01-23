@@ -1,4 +1,4 @@
-import { Switch, Route, BrowserRouter } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 import LandingPage from "./pages/landing-page/LandingPage";
 import NotFound from "./pages/not-found/NotFound";
 import AuthenticatedRoutes from "./routes/Authenticated.route";
@@ -8,6 +8,8 @@ import Login from "./pages/login/Login";
 import { PAGE_URLS } from "./constants/pagurl.constants";
 import Signup from "./pages/signup/Signup";
 import Header from "./shared/header/Header";
+import Loader from "./components/Loader/Loader";
+import { useSelector } from "react-redux";
 
 const AppRoutes = [
   {
@@ -43,6 +45,7 @@ const AppRoutes = [
 ];
 
 export default function App() {
+  const { showLoaderOverlay } = useSelector((state) => state.common);
   const AppAuthenticatedRoutes = () => {
     return AppRoutes.filter((items) => items.protected).map((route) => {
       const { path, title, component } = route;
@@ -54,15 +57,14 @@ export default function App() {
   // console.log(AppAuthenticatedRoutes);
   return (
     <div className="main-container">
-      <BrowserRouter>
-        <Switch>
-          {AppAuthenticatedRoutes()}
-          <Route exact path={PAGE_URLS.homePage.path} component={LandingPage} />
-          <Route exact path={PAGE_URLS.LoginPage.path} component={Login} />
-          <Route exact path={PAGE_URLS.SignupPage.path} component={Signup} />
-          <Route component={NotFound} />
-        </Switch>
-      </BrowserRouter>
+      <Loader showLoader={showLoaderOverlay} />
+      <Switch>
+        {AppAuthenticatedRoutes()}
+        <Route exact path={PAGE_URLS.homePage.path} component={LandingPage} />
+        <Route exact path={PAGE_URLS.LoginPage.path} component={Login} />
+        <Route exact path={PAGE_URLS.SignupPage.path} component={Signup} />
+        <Route component={NotFound} />
+      </Switch>
     </div>
   );
 }
