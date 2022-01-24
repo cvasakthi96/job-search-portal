@@ -1,25 +1,16 @@
-import image1 from "../../../assets/img1.png";
-import image2 from "../../../assets/img2.png";
-import image3 from "../../../assets/img3.png";
-import image4 from "../../../assets/img4.png";
-import image5 from "../../../assets/img5.png";
-import image6 from "../../../assets/img6.png";
-import image7 from "../../../assets/img7.png";
-import image8 from "../../../assets/img8.png";
 import "./Footer.scss";
 export default function Footer() {
   const clientList = [
-    image1,
-    image2,
-    image3,
-    image4,
-    image5,
-    image6,
-    image7,
-    image8,
-    image6,
-    image7,
-    image8,
+    "img1.png",
+    "img2.png",
+    "img3.png",
+    "img4.png",
+    "img5.png",
+    "img6.png",
+    "img7.png",
+    "img3.png",
+    "img2.png",
+    "img8.png",
   ];
   return (
     <div className="footer-wrapper ">
@@ -29,7 +20,15 @@ export default function Footer() {
       <div className="clients-wrapper">
         <div className="clients">
           {clientList.map((url, index) => {
-            return <img className="client-img " key={index} src={url} alt="" />;
+            console.log(`assets/${url}`);
+            return (
+              <img
+                className="client-img "
+                key={index}
+                src={`assets/images/${url}`}
+                alt=""
+              />
+            );
           })}
         </div>
       </div>

@@ -21,3 +21,14 @@ export const getPostedJobs = () => {
       return Promise.reject(error);
     });
 };
+export const getJobsCandidate = ({ id }) => {
+  const url = api.jobsCandidate + id + "/candidates";
+  return axiosInstance
+    .get(url, { withAuthorization: true })
+    .then((response) => {
+      return response;
+    })
+    .catch((error) => {
+      return Promise.reject(error);
+    });
+};

@@ -6,5 +6,6 @@ const api = {
   register: "/auth/register",
   createJobs: "/jobs/",
   postedJobs: "/recruiters/jobs",
+  jobsCandidate: "/recruiters/jobs/",
 };
 export default api;

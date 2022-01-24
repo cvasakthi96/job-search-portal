@@ -31,7 +31,7 @@ export default function ResetPassword() {
       //getting token for password reset
       verifyPasswordTokenService(tempToken)
         .then((res) => {
-          const { data, code, success } = res.data;
+          const { code, success } = res.data;
           dispatch(commonActions.hideLoaderOverlay());
           if (success && code === 200) {
             setShowResetForm(true);
@@ -45,7 +45,7 @@ export default function ResetPassword() {
           }
         });
     }
-  }, [tempToken, dispatch]);
+  }, [tempToken, history, dispatch]);
   useEffect(() => {
     if (tempToken) {
       //validating temp token for next step
@@ -68,7 +68,7 @@ export default function ResetPassword() {
       //getting token for password reset
       getResetPasswordService(email)
         .then((res) => {
-          const { data, code, success } = res.data;
+          const { data, success } = res.data;
           dispatch(commonActions.hideLoaderOverlay());
           if (success) {
             setTempToken(data?.token);
@@ -98,7 +98,7 @@ export default function ResetPassword() {
         token: tempToken,
       })
         .then((res) => {
-          const { data, code, success } = res.data;
+          const { data, success } = res.data;
           dispatch(commonActions.hideLoaderOverlay());
           if (success) {
             localStorage.setItem("portal-token", data?.token);

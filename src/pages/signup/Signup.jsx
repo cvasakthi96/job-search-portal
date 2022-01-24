@@ -2,10 +2,7 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router";
 import { PAGE_URLS } from "../../constants/pagurl.constants";
-import {
-  createAccountService,
-  userLoginService,
-} from "../../services/login/login.service";
+import { createAccountService } from "../../services/login/login.service";
 import Header from "../../shared/header/Header";
 import commonActions from "../../store/actions/common.action";
 import userActions from "../../store/actions/user.action";
@@ -43,8 +40,7 @@ export default function Signup() {
     setIsNameEmpty(false);
   };
   const handleSingup = () => {
-    const { email, confirmPassword, name, password, skills, userRole } =
-      userData;
+    const { email, confirmPassword, name, password, skills } = userData;
     if (!email) {
       setIsEmailEmpty(true);
     }
@@ -68,7 +64,7 @@ export default function Signup() {
       dispatch(commonActions.showLoaderOverlay());
       createAccountService(userData)
         .then((res) => {
-          const { data, code, success } = res.data;
+          const { data, success } = res.data;
           localStorage.setItem("portal-token", data?.token);
           dispatch(userActions.updateUser(data));
           dispatch(commonActions.hideLoaderOverlay());

@@ -7,7 +7,6 @@ import Dashboard from "./pages/dashboard/Dashboard";
 import Login from "./pages/login/Login";
 import { PAGE_URLS } from "./constants/pagurl.constants";
 import Signup from "./pages/signup/Signup";
-import Header from "./shared/header/Header";
 import Loader from "./components/Loader/Loader";
 import { useSelector } from "react-redux";
 

@@ -4,7 +4,6 @@ import { useHistory } from "react-router";
 import { PAGE_URLS } from "../../constants/pagurl.constants";
 import { createJobPostService } from "../../services/post/post.service";
 import commonActions from "../../store/actions/common.action";
-import userActions from "../../store/actions/user.action";
 import "./JobPost.scss";
 export default function JobPost({ toggleShowPost }) {
   const [jobData, setJobData] = useState({
@@ -35,7 +34,7 @@ export default function JobPost({ toggleShowPost }) {
       createJobPostService(jobData)
         .then((res) => {
           const { data, code, success } = res.data;
-          console.log(res.data);
+          console.log(data);
           dispatch(commonActions.hideLoaderOverlay());
           if (success && code) {
             toggleShowPost();

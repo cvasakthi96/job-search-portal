@@ -1,5 +1,4 @@
 import { useHistory } from "react-router";
-import banner from "../../../assets/banner.png";
 import { PAGE_URLS } from "../../../constants/pagurl.constants";
 
 export default function GetStarted() {
@@ -31,7 +30,7 @@ export default function GetStarted() {
         </div>
         <div className="col-12 col-md-6 image-banner-wrapper mt-md-0 mt-3  d-flex justify-content-center">
           <div className="image-banner mt-md-5 mr-md-5 mx-2">
-            <img src={banner} alt="logo" />
+            <img src="assets/images/banner.png" alt="logo" />
           </div>
         </div>
       </div>
