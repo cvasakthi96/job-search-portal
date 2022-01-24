@@ -1,0 +1,10 @@
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+
+// Override bootstrap variables
+$primary: #43afff;
+$secondary: #43afff33;
+$theme-colors: (
+  "primary": $primary,
+  "secondary": $secondary,
+);

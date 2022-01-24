@@ -1,0 +1,28 @@
+// Import Bootstrap and its default variables
+@import "styles/colors";
+@import "~bootstrap/scss/bootstrap.scss";
+
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  padding: 0;
+  margin: 0;
+  height: 100vh;
+  font-family: Helvetica, sans-serif;
+  #root {
+    height: 100%;
+    overflow: auto;
+  }
+  background: linear-gradient(
+    to bottom,
+    #303f60 0%,
+    #303f60 40%,
+    #edf6ff 40%,
+    #edf6ff 100%
+  );
+  background-repeat: no-repeat;
+}

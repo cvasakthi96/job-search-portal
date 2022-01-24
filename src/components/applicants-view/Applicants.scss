@@ -1,0 +1,102 @@
+.applicants-modal {
+  &.modal-dialog {
+    max-width: 694px;
+    .modal-content {
+      box-shadow: 0px 30px 36px #557da526;
+      border-radius: 10px;
+      .modal-body {
+        height: 600px;
+        margin: 12px;
+
+        .content {
+          height: 90%;
+          background-color: #eeeff2;
+          border-radius: 10px;
+          overflow: auto;
+          &::-webkit-scrollbar-track {
+            width: 3px;
+
+            -webkit-box-shadow: inset 0 0 6px #a9afbc;
+            background-color: #f5f5f5;
+          }
+
+          &::-webkit-scrollbar {
+            background: #a9afbc 0% 0% no-repeat padding-box;
+            border-radius: 10px;
+            opacity: 0.4;
+            width: 3px;
+          }
+
+          &::-webkit-scrollbar-thumb {
+            background: #a9afbc 0% 0% no-repeat padding-box;
+            border-radius: 10px;
+            opacity: 0.9;
+            width: 11px;
+          }
+          i {
+            font-size: 8rem;
+          }
+          span {
+            color: #303f60;
+            font-size: 20px;
+          }
+          .applicants-list {
+            width: 100%;
+            overflow: auto;
+            position: relative;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+
+            .content-item {
+              margin: 1rem;
+              width: 274px;
+              height: 141px;
+              background: #ffffff 0% 0% no-repeat padding-box;
+              border: 1px solid #303f6080;
+              border-radius: 5px;
+              opacity: 1;
+              .header {
+                padding: 1rem;
+                .initial {
+                  background: #d9efff;
+                  display: grid;
+                  place-items: center;
+                  border-radius: 50%;
+                  color: #303f60;
+                  width: 50px;
+                  height: 50px;
+                  font-size: 20px;
+                }
+                .name {
+                  color: #303f60;
+                }
+              }
+              .skill {
+                .skill-text {
+                  color: #303f60;
+                  opacity: 1;
+                  font-size: 13px;
+                }
+                .skills {
+                  color: #303f60;
+                  opacity: 0.8;
+                  font-size: 15px;
+                  overflow: hidden;
+                  text-overflow: ellipsis;
+                  display: -webkit-box;
+                  -webkit-line-clamp: 2;
+                  -webkit-box-orient: vertical;
+                }
+              }
+            }
+          }
+        }
+      }
+      .modal-header {
+        button {
+          color: black;
+        }
+      }
+    }
+  }
+}
